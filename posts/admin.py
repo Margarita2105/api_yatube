@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Post
+from .models import Post, Comment
 
 
 class PostAdmin(admin.ModelAdmin):
@@ -9,5 +9,9 @@ class PostAdmin(admin.ModelAdmin):
     empty_value_display = '-пусто-'
 
 
-# при регистрации модели Post источником конфигурации для неё назначаем класс PostAdmin
+class PostComment(admin.ModelAdmin):
+    list_display = ("post", "author", "text", "created")
+
+
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment, PostComment)
