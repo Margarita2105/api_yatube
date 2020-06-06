@@ -1,10 +1,11 @@
-from rest_framework import viewsets, serializers, permissions
+from rest_framework import viewsets, serializers
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.viewsets import ModelViewSet
 
 from posts.models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer
 from .permission import IsOwnerOrReadOnly
+
 
 class PostViewSet(viewsets.ModelViewSet):
     queryset = Post.objects.all()
