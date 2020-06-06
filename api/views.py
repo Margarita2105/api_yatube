@@ -1,6 +1,5 @@
-from rest_framework import viewsets, serializers
+from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.viewsets import ModelViewSet
 
 from posts.models import Post, Comment
 from .serializers import PostSerializer, CommentSerializer
